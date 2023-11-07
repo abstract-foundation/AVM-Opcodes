@@ -1,0 +1,23 @@
+HEADER [65, 86, 77, 95, 120, 56]; // Defining AVM runtime : AVM_x8
+
+// Stores the byte value of the string "HELLO WORLD"
+PTR -x1 SET [72, 69, 76, 76, 79, 32, 87, 79, 82, 76, 68];
+// Prints ^ -x1;
+COUT TYP STR PTR -x1 GET;
+
+
+// Does the same as the line above ^
+ASTR -x2 NEW "HELLO WORLD";
+// Prints ^ -x2
+COUT ASTR -x2 TO_BYTES;
+
+// If we want to easily COUT -1, we need to do type inference
+// instead of [72, 69, 76, 76, 79, 32, 87, 79, 82, 76, 68]
+// we would do [63, 115, 116, 114, 60, 72, 69, 76, 76, 79, 32, 87, 79, 82, 76, 68, 62]
+
+PTR -x3 SET [63, 115, 116, 114, 60, 72, 69, 76, 76, 79, 32, 87, 79, 82, 76, 68, 62];
+
+COUT PTR -x3 GET
+
+
+AINT64 -x11 NEW {12004}

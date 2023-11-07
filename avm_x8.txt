@@ -1,0 +1,79 @@
+# OPCODES - (x8-Architect)
+A list of all the opcodes supported by the AVM-x8 architect.
+
+## Version - v0.0.1
+
+- PTR : Class
+    -> IDENTIFIER : Pointer ID, E.G. -x1, -x3011, -x11, -x22
+        -> ARG1
+    -> GET : Determiner
+        -> ARG2
+    -> SET : Determiner
+        -> ARG2
+    -> IDENTIFIER : []Byte
+        -> ARG 3 : IF ARG2 = "SET"
+
+- ADD : Function
+    -> IDENTIFIER : []Byte
+        -> ARG1
+    -> IDENTIFIER : []Byte
+        -> ARG2
+
+- SUBTRACT : Function
+    -> IDENTIFIER : []Byte
+        -> ARG1
+    -> IDENTIFIER : []Byte
+        -> ARG2
+
+- MULTIPLY : Function
+    -> IDENTIFIER : []Byte
+        -> ARG1
+    -> IDENTIFIER : []Byte
+        -> ARG2
+
+- DIVIDE : Function
+    -> IDENTIFIER : []Byte
+        -> ARG1
+    -> IDENTIFIER : []Byte
+        -> ARG2
+
+- JUMP : Function
+    -> LINE : INT64
+
+- HEADER : Function
+    -> IDENTIFIER : []Byte
+
+- ASTR : TYPE
+    -> STRING : Contained in Quotations ""
+        -> ARG3
+        <- Sets ptr value
+    -> NEW : Determiner
+        -> ARG2
+    -> IDENTIFIER : Pointer ID, E.G. -x1, -x3011, -x11, -x22
+        -> ARG1
+    -> TO_BYTES : Determiner
+        -> ARG2
+        <- []Byte
+
+- AINT64 : TYPE
+    -> STRING : Contained in Numerical
+        -> ARG3
+        <- Sets ptr value
+    -> NEW : Determiner
+        -> ARG2
+    -> IDENTIFIER : Pointer ID, E.G. -x1, -x3011, -x11, -x22
+        -> ARG1
+    -> TO_BYTES : Determiner
+        -> ARG2
+        <- []Byte
+
+
+- COUT : Class
+    -> IDENTIFIER : ASTR
+        -> ARG-ANY
+    -> TYP : Determiner
+        -> ARG1
+    -> STR : Determiner (?str<>)
+        -> ARG2
+    -> INT64 : Determiner
+        -> ARG2
